@@ -10,7 +10,12 @@ namespace CircusTrain
     {
         public static Animal makeAnimal(int size)
         {
-            return new Carnivore(size);
+            List<Animal> animals = new List<Animal>();
+            Animal a;
+            a = new Carnivore(size);
+            animals.Add(a);
+            Console.WriteLine(a.size);
+            return a;
         }
     }
 }

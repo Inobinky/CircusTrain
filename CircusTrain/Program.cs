@@ -12,7 +12,7 @@ namespace CircusTrain
         {
             Train t = new Train();
 
-            t.AddAnimal(1);
+            t.AddAnimal(5);
         }
     }
 }
