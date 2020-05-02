@@ -6,8 +6,11 @@ using System.Threading.Tasks;
 
 namespace CircusTrain
 {
-    class Wagon
+    public class AnimalFactory
     {
-
+        public static Animal makeAnimal(int size)
+        {
+            return new Carnivore(size);
+        }
     }
 }

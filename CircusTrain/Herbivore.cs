@@ -6,8 +6,7 @@ using System.Threading.Tasks;
 
 namespace CircusTrain
 {
-    class Wagon
+    class Herbivore
     {
-
     }
 }

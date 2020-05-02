@@ -6,15 +6,11 @@ using System.Threading.Tasks;
 
 namespace CircusTrain
 {
-    public class Animal
+    public abstract class Animal
     {
-        public bool _isCarnivore;
-        public int _animalSize; //1 = small, 3 = medium, 5 = large
+        private int size;
 
-        public Animal(bool isCarnivore, int size)
-        {
-            this._isCarnivore = isCarnivore;
-            this._animalSize = size;
-        }
+        public int Size() { return size; }
+        public void setSize(int newSize) { size = newSize; }
     }
 }
