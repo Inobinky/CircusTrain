@@ -41,22 +41,43 @@ namespace CircusTrain
             {
                 if (animalItem._isCarnivore)
                 {
-                    if (animalItem._animalSize == 1)
+                    if (animalItem._animalSize == 5)
                     {
-
+                        Wagon newWagonForLargeCarnivore = new Wagon();
+                        _wagons.Add(newWagonForLargeCarnivore);
+                        newWagonForLargeCarnivore.AddAnimal(animalItem);
                     }
                     else if (animalItem._animalSize == 3)
                     {
-
+                        Wagon newWagonForMediumCarnivore = new Wagon();
+                        _wagons.Add(newWagonForMediumCarnivore);
+                        newWagonForMediumCarnivore.AddAnimal(animalItem);
                     }
-                    else if (animalItem._animalSize == 5)
+                    else if (animalItem._animalSize == 1)
                     {
+                        Wagon newWagonForSmallCarnivore = new Wagon();
+                        _wagons.Add(newWagonForSmallCarnivore);
+                        newWagonForSmallCarnivore.AddAnimal(animalItem);
+                    }
+                }
+                else if (!animalItem._isCarnivore && animalItem._animalSize == 5)
+                {
+                    newWagonForMediumCarnivore.Add(animalItem);
+                }
+                else if (!animalItem._isCarnivore && animalItem._animalSize == 3)
+                {
+                    newWagonForSmallCarnivore.Add(animalItem);
+                }
 
+                if (!animalItem._isCarnivore)
+                {
+                    Wagon newWagonForHerbivores = new Wagon();
+                    if ((newWagonForHerbivores.capacity + animalItem._animalSize) <= 10)
+                    {
+                        newWagonForHerbivores.AddAnimal(animalItem);
                     }
                 }
             }
         }
-
-        //private Wagon GetWagonForThisAnimal(Animal animal) { }
     }
 }

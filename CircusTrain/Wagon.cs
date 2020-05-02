@@ -11,14 +11,13 @@ namespace CircusTrain
         public int capacity;
         private List<Animal> _animals;
 
-        public Wagon(IEnumerable<Animal> animals)
+        public Wagon()
         {
 
         }
 
         public void AddAnimal(Animal addedAnimal)
         {
-
             if ((capacity + addedAnimal._animalSize) > 10)
             {
                 
