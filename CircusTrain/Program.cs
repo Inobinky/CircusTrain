@@ -11,8 +11,10 @@ namespace CircusTrain
         static void Main(string[] args)
         {
             Train t = new Train();
-            
-            t.AddAnimal(5);
+
+            t.AddAnimals(AnimalFactory.RandomAnimals(0, 25));
+
+            Console.WriteLine(t);
         }
     }
 }

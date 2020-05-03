@@ -8,8 +8,26 @@ namespace CircusTrain
 {
     public class Train
     {
-        public void AddAnimal(int size)
+        private List<Wagon> _wagons;
+        private List<Animal> _animals;
+
+        public Train()
         {
+            _wagons = new List<Wagon>();
+            _animals = new List<Animal>();
+        }
+
+        public void AddAnimal(Animal animal)
+        {
+
+        }
+
+        public void AddAnimals(IEnumerable<Animal> animals)
+        {
+            foreach (Animal animal in animals)
+            {
+                _animals.Add(animal);
+            }
         }
     }
 }
