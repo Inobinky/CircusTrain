@@ -6,13 +6,10 @@ using System.Threading.Tasks;
 
 namespace CircusTrain
 {
-    class Program
+    public enum Size
     {
-        static void Main(string[] args)
-        {
-            Train t = new Train();
-            
-            t.AddAnimal(5);
-        }
+        Small,
+        Medium,
+        Large
     }
 }

@@ -8,9 +8,9 @@ namespace CircusTrain
 {
     public class Carnivore : Animal
     {
-        public int carnivoreSize;
-
-        public Carnivore(int size)
+        public Size carnivoreSize;
+        
+        public Carnivore(Size size)
         {
             this.carnivoreSize = size;
             setSize(carnivoreSize);

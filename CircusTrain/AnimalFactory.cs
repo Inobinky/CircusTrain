@@ -7,14 +7,41 @@ using System.Threading.Tasks;
 namespace CircusTrain
 {
     public class AnimalFactory
-    {
-        public static Animal makeAnimal(int size)
+    {        
+        public static IEnumerable<Animal> RandomAnimals(int min, int max)
         {
             List<Animal> animals = new List<Animal>();
+            Random r = new Random();
+
+            int amount = r.Next(min, max);
+            int count = 0;
+
+            while (count < amount)
+            {
+                Animal a = RandomAnimal(r);
+                animals.Add(a);
+                count++;
+            }
+
+            return animals.AsEnumerable();
+        }
+        
+        public static Animal RandomAnimal(Random r)
+        {
             Animal a;
-            a = new Carnivore(size);
-            animals.Add(a);
-            Console.WriteLine(a.size);
+            
+            int randomSize = r.Next(0, 3);
+            Size size = (Size)(Enum.GetValues(typeof(Size)).GetValue(randomSize));
+
+            int type = r.Next(0, 2);
+            if (type == 1)
+            {
+                a = new Carnivore(size);
+            }
+            else
+            {
+                a = new Herbivore(size);
+            }
             return a;
         }
     }

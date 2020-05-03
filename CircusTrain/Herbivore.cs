@@ -6,7 +6,14 @@ using System.Threading.Tasks;
 
 namespace CircusTrain
 {
-    class Herbivore
+    public class Herbivore : Animal
     {
+        public Size herbivoreSize;
+
+        public Herbivore(Size size)
+        {
+            this.herbivoreSize = size;
+            setSize(herbivoreSize);
+        }
     }
 }

@@ -10,7 +10,6 @@ namespace CircusTrain
     {
         public void AddAnimal(int size)
         {
-            AnimalFactory.makeAnimal(size);
         }
     }
 }
