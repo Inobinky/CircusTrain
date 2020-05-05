@@ -8,7 +8,12 @@ namespace CircusTrain
 {
     public abstract class Animal
     {
-        private Size size;
+        public Size size;
+
+        public Animal()
+        {
+
+        }
 
         public Size animalSize() { return size; }
         public void setSize(Size newSize) { size = newSize; }

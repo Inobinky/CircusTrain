@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 
 namespace CircusTrain
 {
@@ -17,17 +16,39 @@ namespace CircusTrain
             _animals = new List<Animal>();
         }
 
-        public void AddAnimal(Animal animal)
+        //public int WagonCount { get; set; }
+
+        /*public void AddAnimal(Animal animal)
         {
 
-        }
+        }*/
 
         public void AddAnimals(IEnumerable<Animal> animals)
         {
-            foreach (Animal animal in animals)
+            _animals.AddRange(animals);
+        }
+
+        public void DistributeAnimals()
+        {
+            foreach (Animal animal in _animals)
             {
-                _animals.Add(animal);
+                foreach (Wagon wagon in _wagons)
+                {
+                    if (wagon.IsSafeToAddAnimal(animal))
+                    {
+                        wagon.AddAnimal(animal);
+                    }
+                    else
+                    {
+                        _wagons.Add(new Wagon());
+                    }
+                }
             }
+        }
+
+        private Wagon GetWagonForThisAnimal(Animal animal)
+        {
+            return new Wagon();
         }
     }
 }
