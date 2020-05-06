@@ -12,10 +12,8 @@ namespace CircusTrain
         {
             Train t = new Train();
 
-            t.AddAnimals(AnimalFactory.RandomAnimals(0, 25));
+            t.AddAnimals(AnimalFactory.RandomAnimals(10, 15));
             t.DistributeAnimals();
-
-            Console.WriteLine(t);
         }
     }
 }

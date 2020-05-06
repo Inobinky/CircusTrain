@@ -17,16 +17,22 @@ namespace CircusTrain
             set { _capacity = value; }
         }
 
+        public List<Animal> Animals
+        {
+            get { return _animals; }
+            set { _animals = value; }
+        }
+
         public Wagon()
         {
             Capacity = 10;
-            _animals = _animals;
+            Animals = new List<Animal>();
         }
 
         public void AddAnimal(Animal animal)
         {
             _animals.Add(animal);
-            Capacity += (int)animal.size;
+            Capacity -= (int)animal.size;
         }
 
         public bool WillAnimalFit(Animal animal)
@@ -43,14 +49,22 @@ namespace CircusTrain
 
         public bool IsSafeToAddAnimal(Animal animal)
         {
-            if (_animals.OfType<Carnivore>().Any() && Capacity >= (int)animal.size)
+            if (_animals.Any())
             {
-                return false;
-            }
-            else
-            {
+                if (_animals.OfType<Carnivore>().Any())
+                {
+                    foreach (Carnivore carnivore in _animals)
+                    {
+                        if (carnivore.size >= animal.size)
+                        {
+                            return false;
+                        }
+                        return true;
+                    }
+                }
                 return true;
             }
+            return true;
         }
 
         private bool AreHerbivoresOnBoard()
