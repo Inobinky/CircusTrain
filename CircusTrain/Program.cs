@@ -14,6 +14,7 @@ namespace CircusTrain
 
             t.AddAnimals(AnimalFactory.RandomAnimals(10, 15));
             t.DistributeAnimals();
+            t.DisplayWagons();
         }
     }
 }
