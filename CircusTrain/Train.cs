@@ -31,75 +31,41 @@ namespace CircusTrain
 
         public void DistributeAnimals()
         {
-            Wagon wagonForCarnivore;
-            Wagon tempWagon;
-            Wagon newWagonForCarnivore;
-
-            Console.WriteLine(_animals.OfType<Carnivore>().Count() + " Carnivores");
-            Console.WriteLine(_animals.OfType<Herbivore>().Count() + " Herbivores");
-
-            foreach (Carnivore carnivore in _animals.OfType<Carnivore>())
+            foreach (Animal animal in _animals)
             {
-                wagonForCarnivore = new Wagon();
-                wagonForCarnivore.AddAnimal(carnivore);
-                _wagons.Add(wagonForCarnivore);
-            }
-
-            Console.WriteLine(_wagons.Count() + " Wagons for Carnivores");
-
-            for (int i = 0; i < _wagons.Count; i++)
-            {
-                Console.WriteLine("I = " + i);
-
-                tempWagon = _wagons.ElementAt(i);
-
-                foreach (Herbivore herbivore in _animals.OfType<Herbivore>())
-                {
-                    if (tempWagon.WillAnimalFit(herbivore) && tempWagon.IsSafeToAddAnimal(herbivore))
-                    {
-                        tempWagon.AddAnimal(herbivore);
-                    }
-                    else
-                    {
-                        //newWagonForCarnivore = new Wagon();
-                        //newWagonForCarnivore.AddAnimal(herbivore);
-                        //_wagons.Add(newWagonForCarnivore);
-                        Console.WriteLine("added");
-                    }
-                }
-            }
-        }
-
-        public void DisplayWagons()
-        {
-            Console.WriteLine(string.Format($"Complete Distribution of wagons:"));
-
-            for (int i = 0; i < _wagons.Count; i++)
-            {                
-                Console.WriteLine(string.Format("Wagon {0}: {1}",
-                    _wagons.ElementAt(i),
-                    _wagons.ElementAt(i).Animals
-                    //_wagons.ElementAt(i).Animals.GetRange.size
-                    ));
+                GetWagonForThisAnimal(animal);
             }
         }
 
         private Wagon GetWagonForThisAnimal(Animal animal)
         {
-            Wagon newWagon = new Wagon();
-            if (newWagon.IsSafeToAddAnimal(animal))
+            Wagon wagon = MethodBase.GetCurrentMethod().DeclaringType;
+
+            if (MethodBase.GetCurrentMethod().iss)
             {
-                if (newWagon.WillAnimalFit(animal))
-                {
-                    newWagon.AddAnimal(animal);
-                }
+                wagon.AddAnimal(animal);
+                return wagon;
             }
             else
             {
-                _wagons.Add(newWagon);
-                newWagon.AddAnimal(animal);
+                return null;
             }
-            return newWagon;
+        }
+
+        public void DisplayWagons()
+        {
+            Console.WriteLine(_animals.OfType<Carnivore>().Count() + " Carnivores");
+            Console.WriteLine(_animals.OfType<Herbivore>().Count() + " Herbivores");
+            Console.WriteLine(string.Format($"Complete Distribution of wagons:"));
+
+            for (int i = 0; i < _wagons.Count; i++)
+            {
+                Console.WriteLine(string.Format("Wagon {0}: {1}",
+                    _wagons.ElementAt(i).ToString(),
+                    _wagons.ElementAt(i).Animals.ToString()
+                    //_wagons.ElementAt(i).Animals.GetRange.size
+                    ));
+            }
         }
     }
 }
