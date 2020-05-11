@@ -42,13 +42,13 @@ namespace CircusTrain
                     if (wagon.WillAnimalFit(herbivore) && wagon.IsSafeToAddAnimal(herbivore))
                     {
                         wagon.AddAnimal(herbivore);
-                        Console.WriteLine("Herbivore added");
+                        break;
                     }
                 }
             }
         }
 
-        private Wagon GetWagonForThisAnimal(Animal animal)
+        /*private Wagon GetWagonForThisAnimal(Animal animal)
         {
             Wagon wagon = GetWagonForThisAnimal(animal);
 
@@ -64,7 +64,7 @@ namespace CircusTrain
                 _wagons.Add(wagon);
                 return wagon;
             }
-        }
+        }*/
 
         public void DisplayWagons()
         {
