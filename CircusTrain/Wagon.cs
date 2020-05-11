@@ -49,20 +49,16 @@ namespace CircusTrain
 
         public bool IsSafeToAddAnimal(Animal animal)
         {
-            if (_animals.Any())
+            if (AreCarnivoresOnBoard())
             {
-                if (_animals.OfType<Carnivore>().Any())
+                foreach (Carnivore carnivore in _animals)
                 {
-                    foreach (Carnivore carnivore in _animals)
+                    if (carnivore.size >= animal.size)
                     {
-                        if (carnivore.size >= animal.size)
-                        {
-                            return false;
-                        }
-                        return true;
+                        return false;
                     }
+                    return true;
                 }
-                return true;
             }
             return true;
         }

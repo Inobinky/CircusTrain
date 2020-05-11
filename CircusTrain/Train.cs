@@ -31,24 +31,31 @@ namespace CircusTrain
 
         public void DistributeAnimals()
         {
-            foreach (Animal animal in _animals)
+            foreach (Carnivore carnivore in _animals)
             {
-                GetWagonForThisAnimal(animal);
+                GetWagonForThisAnimal(carnivore);
+            }
+            foreach (Herbivore herbivore in _animals)
+            {
+                GetWagonForThisAnimal(herbivore);
             }
         }
 
         private Wagon GetWagonForThisAnimal(Animal animal)
         {
-            Wagon wagon = MethodBase.GetCurrentMethod().DeclaringType;
+            Wagon wagon = GetWagonForThisAnimal(animal);
 
-            if (MethodBase.GetCurrentMethod().iss)
+            if (wagon.IsSafeToAddAnimal(animal) && wagon.WillAnimalFit(animal))
             {
                 wagon.AddAnimal(animal);
                 return wagon;
             }
             else
             {
-                return null;
+                wagon = new Wagon();
+                wagon.AddAnimal(animal);
+                _wagons.Add(wagon);
+                return wagon;
             }
         }
 

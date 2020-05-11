@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using CircusTrain.Factory;
 
-namespace CircusTrain
+namespace CircusTrain.Console
 {
     class Program
     {

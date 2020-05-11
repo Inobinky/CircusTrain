@@ -44,7 +44,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Animal.cs" />
-    <Compile Include="AnimalFactory.cs" />
+    <Compile Include="Factory\AnimalFactory.cs" />
     <Compile Include="Carnivore.cs" />
     <Compile Include="Enum\Size.cs" />
     <Compile Include="Herbivore.cs" />
