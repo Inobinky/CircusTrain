@@ -26,7 +26,7 @@ namespace CircusTrain
         public Wagon()
         {
             Capacity = 10;
-            _animals = Animals;
+            Animals = new List<Animal>();
         }
 
         public void AddAnimal(Animal animal)

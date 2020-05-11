@@ -16,13 +16,6 @@ namespace CircusTrain
             _animals = new List<Animal>();
         }
 
-        //public int WagonCount { get; set; }
-
-        /*public void AddAnimal(Animal animal)
-        {
-
-        }*/
-
         public void AddAnimals(IEnumerable<Animal> animals)
         {
             _animals.AddRange(animals);
@@ -31,13 +24,27 @@ namespace CircusTrain
 
         public void DistributeAnimals()
         {
-            foreach (Carnivore carnivore in _animals)
+            Wagon wagon;
+
+            foreach (Carnivore carnivore in _animals.OfType<Carnivore>())
             {
-                GetWagonForThisAnimal(carnivore);
+                wagon = new Wagon();
+                wagon.AddAnimal(carnivore);
+                _wagons.Add(wagon);
+                Console.WriteLine("Carnivore added");
             }
-            foreach (Herbivore herbivore in _animals)
+            foreach (Herbivore herbivore in _animals.OfType<Herbivore>())
             {
-                GetWagonForThisAnimal(herbivore);
+                for (int i = 0; i < _wagons.Count; i++)
+                {
+                    wagon = _wagons.ElementAt(i);
+
+                    if (wagon.WillAnimalFit(herbivore) && wagon.IsSafeToAddAnimal(herbivore))
+                    {
+                        wagon.AddAnimal(herbivore);
+                        Console.WriteLine("Herbivore added");
+                    }
+                }
             }
         }
 
@@ -65,14 +72,14 @@ namespace CircusTrain
             Console.WriteLine(_animals.OfType<Herbivore>().Count() + " Herbivores");
             Console.WriteLine(string.Format($"Complete Distribution of wagons:"));
 
-            for (int i = 0; i < _wagons.Count; i++)
+            /*for (int i = 0; i < _wagons.Count; i++)
             {
                 Console.WriteLine(string.Format("Wagon {0}: {1}",
                     _wagons.ElementAt(i).ToString(),
                     _wagons.ElementAt(i).Animals.ToString()
                     //_wagons.ElementAt(i).Animals.GetRange.size
                     ));
-            }
+            }*/
         }
     }
 }
