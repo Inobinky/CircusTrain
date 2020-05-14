@@ -31,8 +31,30 @@ namespace CircusTrain
 
         public void AddAnimal(Animal animal)
         {
-            _animals.Add(animal);
-            Capacity -= (int)animal.size;
+            try
+            {
+                if (IsSafeToAddAnimal(animal))
+                {
+                    try
+                    {
+                        if (WillAnimalFit(animal))
+                        {
+                            _animals.Add(animal);
+                            Capacity -= (int)animal.size;
+                        }
+                    }
+                    catch (WagonCapacityException)
+                    {
+                        Console.WriteLine("[Wagon is full!]");
+                        throw new WagonCapacityException("[Cannot add animal because the wagon is full.");
+                    }
+                }
+            }
+            catch (WagonSafetyException)
+            {
+                Console.WriteLine("[Unsafe to add animal!]");
+                throw new WagonSafetyException("Cannot add animal because it's unsafe.");
+            }
         }
 
         public bool WillAnimalFit(Animal animal)

@@ -44,5 +44,13 @@ namespace CircusTrain.Factory
             }
             return a;
         }
+
+        public static Animal SmallHerbivore { get => new Herbivore(Size.Small); }
+        public static Animal MediumHerbivore { get => new Herbivore(Size.Medium); }
+        public static Animal LargeHerbivore { get => new Herbivore(Size.Large); }
+
+        public static Animal SmallCarnivore { get => new Carnivore(Size.Small); }
+        public static Animal MediumCarnivore { get => new Carnivore(Size.Medium); }
+        public static Animal LargeCarnivore { get => new Carnivore(Size.Large); }
     }
 }
