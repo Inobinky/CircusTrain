@@ -25,17 +25,18 @@ namespace CircusTrain
         public void DistributeAnimals()
         {
             Wagon wagon;
+            int count = 0;
 
             foreach (Carnivore carnivore in _animals.OfType<Carnivore>())
             {
                 wagon = new Wagon();
                 wagon.AddAnimal(carnivore);
                 _wagons.Add(wagon);
-                Console.WriteLine("Carnivore added");
             }
+
             foreach (Herbivore herbivore in _animals.OfType<Herbivore>())
             {
-                for (int i = 0; i < _wagons.Count; i++)
+                for (int i = 0; i < _wagons.Count(); i++)
                 {
                     wagon = _wagons.ElementAt(i);
 
@@ -44,8 +45,35 @@ namespace CircusTrain
                         wagon.AddAnimal(herbivore);
                         break;
                     }
+                    else if (i == (_wagons.Count() - 1))
+                    {
+                        wagon = new Wagon();
+                        wagon.AddAnimal(herbivore);
+                        _wagons.Add(wagon);
+                        break;
+                    }
+                    else if (i < _wagons.Count())
+                    {
+                        continue;
+                    }
                 }
             }
+
+            /*foreach (Herbivore herbivore in _animals.OfType<Herbivore>())
+            {
+                foreach (Wagon newWagon in _wagons.ToList())
+                {
+                    if (newWagon.WillAnimalFit(herbivore) && newWagon.IsSafeToAddAnimal(herbivore))
+                    {
+                        newWagon.AddAnimal(herbivore);
+                        break;
+                    }
+                    else
+                    {
+                        
+                    }
+                }
+            }*/
         }
 
         /*private Wagon GetWagonForThisAnimal(Animal animal)
@@ -70,16 +98,21 @@ namespace CircusTrain
         {
             Console.WriteLine(_animals.OfType<Carnivore>().Count() + " Carnivores");
             Console.WriteLine(_animals.OfType<Herbivore>().Count() + " Herbivores");
-            Console.WriteLine(string.Format($"Complete Distribution of wagons:"));
+            Console.WriteLine(string.Format($"\nComplete Distribution of wagons:"));
 
-            /*for (int i = 0; i < _wagons.Count; i++)
+            for (int i = 0; i < _wagons.Count; i++)
             {
-                Console.WriteLine(string.Format("Wagon {0}: {1}",
-                    _wagons.ElementAt(i).ToString(),
-                    _wagons.ElementAt(i).Animals.ToString()
-                    //_wagons.ElementAt(i).Animals.GetRange.size
-                    ));
-            }*/
+                Wagon wagon = _wagons.ElementAt(i);
+                Console.WriteLine(string.Format($"\nWagon {i} Contains: \n"));
+                foreach (Carnivore carnivore in wagon.Animals.OfType<Carnivore>())
+                {
+                    Console.WriteLine("C-" + carnivore.size + ", ");
+                }
+                foreach (Herbivore herbivore in wagon.Animals.OfType<Herbivore>())
+                {
+                    Console.WriteLine("H-" + herbivore.size + ", ");
+                }
+            }
         }
     }
 }
