@@ -52,5 +52,19 @@ namespace CircusTrain.Tests
             // Act
             _wagon.AddAnimal(AnimalFactory.MediumHerbivore);
         }
+
+        [TestMethod]
+        [ExpectedException(typeof(WagonCapacityException))]
+        public void Cant_Add_Animals_To_Full_Wagon()
+        {
+            // Arrange
+            _wagon.AddAnimal(AnimalFactory.LargeHerbivore);
+            _wagon.AddAnimal(AnimalFactory.LargeHerbivore);
+
+            // Act
+            _wagon.AddAnimal(AnimalFactory.LargeHerbivore);
+
+            // Assert
+        }
     }
 }

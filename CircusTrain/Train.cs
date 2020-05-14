@@ -10,6 +10,8 @@ namespace CircusTrain
         private List<Wagon> _wagons;
         private List<Animal> _animals;
 
+        public int WagonCount { get; set; }
+
         public Train()
         {
             _wagons = new List<Wagon>();
@@ -25,7 +27,6 @@ namespace CircusTrain
         public void DistributeAnimals()
         {
             Wagon wagon;
-            int count = 0;
 
             foreach (Carnivore carnivore in _animals.OfType<Carnivore>())
             {
@@ -59,21 +60,7 @@ namespace CircusTrain
                 }
             }
 
-            /*foreach (Herbivore herbivore in _animals.OfType<Herbivore>())
-            {
-                foreach (Wagon newWagon in _wagons.ToList())
-                {
-                    if (newWagon.WillAnimalFit(herbivore) && newWagon.IsSafeToAddAnimal(herbivore))
-                    {
-                        newWagon.AddAnimal(herbivore);
-                        break;
-                    }
-                    else
-                    {
-                        
-                    }
-                }
-            }*/
+            WagonCount = _wagons.Count;
         }
 
         /*private Wagon GetWagonForThisAnimal(Animal animal)
