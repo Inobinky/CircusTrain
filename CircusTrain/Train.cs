@@ -18,6 +18,11 @@ namespace CircusTrain
             _animals = new List<Animal>();
         }
 
+        public void AddAnimal(Animal animal)
+        {
+            _animals.Add(animal);
+        }
+
         public void AddAnimals(IEnumerable<Animal> animals)
         {
             _animals.AddRange(animals);
@@ -37,6 +42,8 @@ namespace CircusTrain
 
             foreach (Herbivore herbivore in _animals.OfType<Herbivore>())
             {
+                if (_wagons.Count == 0) { _wagons.Add(new Wagon()); }
+
                 for (int i = 0; i < _wagons.Count(); i++)
                 {
                     wagon = _wagons.ElementAt(i);

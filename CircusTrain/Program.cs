@@ -13,7 +13,7 @@ namespace CircusTrain
         {
             Train t = new Train();
 
-            t.AddAnimals(AnimalFactory.RandomAnimals(1, 26));
+            t.AddAnimals(AnimalFactory.RandomAnimals(19, 26));
             t.DistributeAnimals();
             t.DisplayWagons();
         }
