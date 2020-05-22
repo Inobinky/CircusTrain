@@ -8,6 +8,12 @@ namespace CircusTrain.Factory
 {
     public class AnimalFactory
     {        
+        /// <summary>
+        /// Returns a List with randomly generated various animals. It is specified by the user what the minimum and maximum amount of animals should be.
+        /// </summary>
+        /// <param name="min">Minimum amount of random animals.</param>
+        /// <param name="max">Maximum amount of random animals.</param>
+        /// <returns></returns>
         public static IEnumerable<Animal> RandomAnimals(int min, int max)
         {
             List<Animal> animals = new List<Animal>();

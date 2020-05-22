@@ -11,6 +11,7 @@ namespace CircusTrain
         private List<Animal> _animals;
 
         public int WagonCount { get; set; }
+        public List<Wagon> Wagons { get; set; }
 
         public Train()
         {
@@ -23,12 +24,19 @@ namespace CircusTrain
             _animals.Add(animal);
         }
 
+        /// <summary>
+        /// Adds the list of random animals to the train (not yet distributed).
+        /// </summary>
+        /// <param name="animals">The List of animals.</param>
         public void AddAnimals(IEnumerable<Animal> animals)
         {
             _animals.AddRange(animals);
             Console.WriteLine(_animals.Count + " Animals in total");
         }
 
+        /// <summary>
+        /// Distributes the list of animals in the train into the wagons where they fit in and are safe to be added to.
+        /// </summary>
         public void DistributeAnimals()
         {
             Wagon wagon;
@@ -68,6 +76,7 @@ namespace CircusTrain
             }
 
             WagonCount = _wagons.Count;
+            Wagons = _wagons;
         }
 
         /*private Wagon GetWagonForThisAnimal(Animal animal)
