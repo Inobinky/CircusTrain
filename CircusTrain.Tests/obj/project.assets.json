@@ -6823,11 +6823,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Fontys local\\Semester 2\\Opdrachten\\CircusTrain\\CircusTrain.Tests\\CircusTrain.Tests.csproj",
+      "projectUniqueName": "D:\\Fontys_local\\Semester 2\\Opdrachten\\CircusTrain\\CircusTrain.Tests\\CircusTrain.Tests.csproj",
       "projectName": "CircusTrain.Tests",
-      "projectPath": "D:\\Fontys local\\Semester 2\\Opdrachten\\CircusTrain\\CircusTrain.Tests\\CircusTrain.Tests.csproj",
+      "projectPath": "D:\\Fontys_local\\Semester 2\\Opdrachten\\CircusTrain\\CircusTrain.Tests\\CircusTrain.Tests.csproj",
       "packagesPath": "C:\\Users\\bartb\\.nuget\\packages\\",
-      "outputPath": "D:\\Fontys local\\Semester 2\\Opdrachten\\CircusTrain\\CircusTrain.Tests\\obj\\",
+      "outputPath": "D:\\Fontys_local\\Semester 2\\Opdrachten\\CircusTrain\\CircusTrain.Tests\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -6846,8 +6846,8 @@
       "frameworks": {
         "netcoreapp3.1": {
           "projectReferences": {
-            "D:\\Fontys local\\Semester 2\\Opdrachten\\CircusTrain\\CircusTrain\\CircusTrain.csproj": {
-              "projectPath": "D:\\Fontys local\\Semester 2\\Opdrachten\\CircusTrain\\CircusTrain\\CircusTrain.csproj"
+            "D:\\Fontys_local\\Semester 2\\Opdrachten\\CircusTrain\\CircusTrain\\CircusTrain.csproj": {
+              "projectPath": "D:\\Fontys_local\\Semester 2\\Opdrachten\\CircusTrain\\CircusTrain\\CircusTrain.csproj"
             }
           }
         }

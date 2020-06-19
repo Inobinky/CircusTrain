@@ -1,3 +1,0 @@
-D:\Fontys local\Semester 2\Opdrachten\CircusTrain\Circustrain.Console\obj\Debug\netcoreapp3.1\CircusTrain.Console.csprojAssemblyReference.cache
-D:\Fontys local\Semester 2\Opdrachten\CircusTrain\Circustrain.Console\obj\Debug\netcoreapp3.1\CircusTrain.Console.AssemblyInfoInputs.cache
-D:\Fontys local\Semester 2\Opdrachten\CircusTrain\Circustrain.Console\obj\Debug\netcoreapp3.1\CircusTrain.Console.AssemblyInfo.cs
