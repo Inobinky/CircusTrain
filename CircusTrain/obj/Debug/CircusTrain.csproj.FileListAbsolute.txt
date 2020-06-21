@@ -4,3 +4,9 @@ D:\Fontys local\Semester 2\Opdrachten\CircusTrain\CircusTrain\bin\Debug\CircusTr
 D:\Fontys local\Semester 2\Opdrachten\CircusTrain\CircusTrain\obj\Debug\CircusTrain.csprojAssemblyReference.cache
 D:\Fontys local\Semester 2\Opdrachten\CircusTrain\CircusTrain\obj\Debug\CircusTrain.exe
 D:\Fontys local\Semester 2\Opdrachten\CircusTrain\CircusTrain\obj\Debug\CircusTrain.pdb
+D:\Fontys_local\Semester 2\Opdrachten\CircusTrain\CircusTrain\bin\Debug\CircusTrain.exe.config
+D:\Fontys_local\Semester 2\Opdrachten\CircusTrain\CircusTrain\bin\Debug\CircusTrain.exe
+D:\Fontys_local\Semester 2\Opdrachten\CircusTrain\CircusTrain\bin\Debug\CircusTrain.pdb
+D:\Fontys_local\Semester 2\Opdrachten\CircusTrain\CircusTrain\obj\Debug\CircusTrain.csprojAssemblyReference.cache
+D:\Fontys_local\Semester 2\Opdrachten\CircusTrain\CircusTrain\obj\Debug\CircusTrain.exe
+D:\Fontys_local\Semester 2\Opdrachten\CircusTrain\CircusTrain\obj\Debug\CircusTrain.pdb
